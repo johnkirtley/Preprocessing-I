@@ -140,13 +140,36 @@ table {
 	box-sizing: border-box;
 }
 
-@font-color: skyblue;
+@font-color: rgb(36, 92, 114);
 @background-color: lightgrey;
+
+.border-style() {
+	border: 2px solid black;
+}
+
+.flex-box() {
+	display: flex;
+	justify-content: center;
+}
+
+.sulphur-font() {
+	font-family: 'Sulphur Pont', sans-serif;
+}
+
 
 html,
 body {
 	height: 100%;
 	margin: 0 1.5%;
+
+	@media (max-width: 500px) {
+		display: flex;
+		flex-flow: column nowrap;
+	}
+}
+
+h2 {
+	font-size: 1.8rem;
 }
 
 nav {
@@ -159,15 +182,22 @@ nav {
 		padding: 1% 1.5%;
 		color: @font-color;
 	}
+
+	a:hover {
+		transform: scale(1.5)
+	}
 }
 
 .header {
-	display: flex;
+	.flex-box();
 	flex-flow: column nowrap;
-	justify-content: center;
 	background-color: @background-color;
-	height: 45vh;
+	height: 60vh;
 	padding-left: 2%;
+
+	img {
+		width: 20%;
+	}
 
 	h1 {
 		font-size: 2rem;
@@ -187,7 +217,55 @@ nav {
 		width: 10%;
 		padding: 1% 0;
 		border-radius: 10px;
+		background-color: darkgreen;
+		color: white;
 
+		@media (max-width: 500px) {
+			width: 20%;
+			margin-bottom: 2%;
+		}
 	}
 
+}
+
+.middle-section {
+	display: grid;
+	grid-template-rows: repeat(1, 2fr);
+	grid-template-columns: repeat(2, 1fr);
+	padding: 2% 0;
+
+	.listen-up {
+		padding-right: 13%;
+	}
+
+	.skill {
+		border: 2px solid lightgray;
+		padding: 2% 0 2% 1%;
+		.sulphur-font();
+	}
+
+}
+
+.work-history {
+	table {
+		margin-bottom: 3%;
+
+		td,
+		th {
+			text-align: center;
+			.border-style();
+			padding: 1.5% 0;
+		}
+
+		th {
+			font-size: 1.2rem;
+		}
+	}
+}
+
+footer {
+	background-color: @background-color;
+	text-align: center;
+	padding: 4% 0;
+	color: white;
 }

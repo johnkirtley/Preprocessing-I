@@ -135,6 +135,16 @@ body {
   height: 100%;
   margin: 0 1.5%;
 }
+@media (max-width: 500px) {
+  html,
+  body {
+    display: flex;
+    flex-flow: column nowrap;
+  }
+}
+h2 {
+  font-size: 1.8rem;
+}
 nav {
   display: flex;
   justify-content: flex-end;
@@ -143,15 +153,21 @@ nav a {
   list-style: none;
   text-decoration: none;
   padding: 1% 1.5%;
-  color: skyblue;
+  color: #245c72;
+}
+nav a:hover {
+  transform: scale(1.5);
 }
 .header {
   display: flex;
-  flex-flow: column nowrap;
   justify-content: center;
+  flex-flow: column nowrap;
   background-color: lightgrey;
-  height: 45vh;
+  height: 60vh;
   padding-left: 2%;
+}
+.header img {
+  width: 20%;
 }
 .header h1 {
   font-size: 2rem;
@@ -168,4 +184,44 @@ nav a {
   width: 10%;
   padding: 1% 0;
   border-radius: 10px;
+  background-color: darkgreen;
+  color: white;
+}
+@media (max-width: 500px) {
+  .header button {
+    width: 20%;
+    margin-bottom: 2%;
+  }
+}
+.middle-section {
+  display: grid;
+  grid-template-rows: repeat(1, 2fr);
+  grid-template-columns: repeat(2, 1fr);
+  padding: 2% 0;
+}
+.middle-section .listen-up {
+  padding-right: 13%;
+}
+.middle-section .skill {
+  border: 2px solid lightgray;
+  padding: 2% 0 2% 1%;
+  font-family: 'Sulphur Pont', sans-serif;
+}
+.work-history table {
+  margin-bottom: 3%;
+}
+.work-history table td,
+.work-history table th {
+  text-align: center;
+  border: 2px solid black;
+  padding: 1.5% 0;
+}
+.work-history table th {
+  font-size: 1.2rem;
+}
+footer {
+  background-color: lightgrey;
+  text-align: center;
+  padding: 4% 0;
+  color: white;
 }
